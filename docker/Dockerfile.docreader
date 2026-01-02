@@ -3,9 +3,9 @@
 # =========================
 FROM python:3.10.18-bookworm AS builder
 
-# apt 소스를 칭화대학교 미러로 전환
-RUN sed -i 's@http://deb.debian.org@https://mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/sources.list.d/debian.sources && \
-    sed -i 's@http://security.debian.org@https://mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/sources.list.d/debian.sources
+# apt 소스를 카카오 미러로 전환
+RUN sed -i 's@http://deb.debian.org@http://mirror.kakao.com@g' /etc/apt/sources.list.d/debian.sources && \
+    sed -i 's@http://security.debian.org@http://mirror.kakao.com@g' /etc/apt/sources.list.d/debian.sources
 
 WORKDIR /app
 
@@ -94,9 +94,9 @@ RUN ls -la /root/.paddleocr/whl/
 # =========================
 FROM python:3.10.18-bookworm AS runner
 
-# apt 소스를 칭화대학교 미러로 전환
-RUN sed -i 's@http://deb.debian.org@https://mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/sources.list.d/debian.sources && \
-    sed -i 's@http://security.debian.org@https://mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/sources.list.d/debian.sources
+# apt 소스를 카카오 미러로 전환
+RUN sed -i 's@http://deb.debian.org@http://mirror.kakao.com@g' /etc/apt/sources.list.d/debian.sources && \
+    sed -i 's@http://security.debian.org@http://mirror.kakao.com@g' /etc/apt/sources.list.d/debian.sources
 
 WORKDIR /app
 
